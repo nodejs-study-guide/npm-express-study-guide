@@ -59,6 +59,8 @@ Also updates package.json so you now can use `npm start` instead of `node server
 
 ## example 03 - add unit test
 
+https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo
+
 ```bash
 npm install -D mocha chai 
 npm install -D supertest nock
