@@ -35,7 +35,8 @@ Then run:
 $ node app.js
 listening on port 3000
 ```
-This caused the terminal to hang since it's listening on a port. 
+
+This caused the terminal to hang since it's listening on a port.
 
 and on another terminal run:
 
@@ -44,14 +45,13 @@ $ curl http://localhost:3000/
 hello from my app
 ```
 
-
 ## example 02 - refactor
 
-Doing `npm test` would cause app to actually start listening, and cause things to hang. 
+Doing `npm test` would cause app to actually start listening, and cause things to hang.
 
-That's why split out app.js into 2 separate files. app.js and server.js. That's done for unit testing purposes only. 
+That's why split out app.js into 2 separate files. app.js and server.js. That's done for unit testing purposes only.
 
-Now we can create appTest.js but but no need to write serverTest.js becuse there's nothing of interest that needs testing here. 
+Now we can create appTest.js but but no need to write serverTest.js becuse there's nothing of interest that needs testing here.
 
 Now have to start app using `node server.js`
 
@@ -59,7 +59,7 @@ Also updates package.json so you now can use `npm start` instead of `node server
 
 ## example 03 - add unit test
 
-https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo
+<https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo>
 
 ```bash
 npm install -D mocha chai 
@@ -68,6 +68,3 @@ npm install -D standard
 ```
 
 Also added a few run-scripts in `package.json`.
-
-
-
