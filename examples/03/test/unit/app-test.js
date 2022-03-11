@@ -26,7 +26,7 @@ describe('main tests', () => {
       .reply(200, 'Hello')
 
     const response = await request(app)
-  		  .post('/')
+  		  .get('/')
   		  .expect(200)
 
 		  expect(response.body).to.have.property('hello', 'world')
