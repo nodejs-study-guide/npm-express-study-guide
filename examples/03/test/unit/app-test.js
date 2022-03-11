@@ -22,7 +22,7 @@ describe('main tests', () => {
 
   it('Successful request', async () => {
     const mockResponse = {
-      text: 'hello'
+      "text": "hello",
     }
 
     runtimeNock.get('/')
