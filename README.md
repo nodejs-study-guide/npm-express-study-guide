@@ -20,7 +20,7 @@ const app = express()
 
 // This get basically means if this endpoint is requested, then existing this javascript function:
 app.get('/',(req, res)=>{
- res.send("hello form my app")
+ res.send("hello from my app")
 })
 
 
@@ -41,7 +41,7 @@ and on another terminal run:
 
 ```bash
 $ curl http://localhost:3000/ 
-hello form my app
+hello from my app
 ```
 
 
