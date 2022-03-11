@@ -5,7 +5,6 @@ const nock = require('nock')
 const expect = require('chai').expect
 
 describe('main tests', () => {
-  
   let app
   before(() => {
     app = require('../../app').app
@@ -22,15 +21,17 @@ describe('main tests', () => {
   })
 
   it('Successful request', async () => {
-    const mockResponse = "hello"
-    
+    const mockResponse = {
+      text: 'hello'
+    }
+
     runtimeNock.get('/')
       .reply(200, mockResponse)
 
     const res = await request(app)
-  		  .get('/')
-  		  .expect(200)
+      .get('/')
+      .expect(200)
 
-		  expect(res.text).to.eql('hello')
-	  })
+    expect(res.text).to.equal('hello')
+  })
 })
