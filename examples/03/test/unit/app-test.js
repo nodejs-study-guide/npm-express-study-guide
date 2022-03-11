@@ -11,7 +11,7 @@ describe('main tests', () => {
     app = require('../../app').app
   })
 
-  const RUNTIME_ENDPOINT_URL = 'http://localhost:3000'
+  const RUNTIME_ENDPOINT_URL = 'http://localhost'
   let runtimeNock
   beforeEach(() => {
     runtimeNock = nock(RUNTIME_ENDPOINT_URL)
@@ -22,13 +22,15 @@ describe('main tests', () => {
   })
 
   it('Successful request', async () => {
+    const mockResponse = "hello"
+    
     runtimeNock.get('/')
-      .reply(200, 'Hello')
+      .reply(200, mockResponse)
 
-    const response = await request(app)
+    const res = await request(app)
   		  .get('/')
   		  .expect(200)
 
-		  expect(response.body).to.have.property('hello', 'world')
+		  expect(res.text).to.eql('hello')
 	  })
 })
