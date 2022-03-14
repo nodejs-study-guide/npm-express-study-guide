@@ -3,5 +3,10 @@
 const index = require('./app.js')
 
 const server = index.app.listen(index.port, () => {
-  console.log('listening on port 3000')
+  const port = server.address().port
+  console.log(port)
+
+  let message = "Server started at: https://" + host + ":" + port
+
+  console.log(message)
 })

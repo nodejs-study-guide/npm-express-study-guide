@@ -57,7 +57,22 @@ Now have to start app using `node server.js`
 
 Also updates package.json so you now can use `npm start` instead of `node server.js`
 
-## example 03 - add unit test
+## example 03 - add linting
+
+We're going to use the standard function to do the linting:
+
+```bash
+npm install -D standard
+```
+
+also added "lint" and "lint:fix" npm-run scripts to the package.json. So now can do:
+
+```bash
+npm run lint
+npm run lint:fix
+```
+
+## example 04 - add unit test
 
 <https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo>
 
