@@ -183,6 +183,37 @@ Server started on port 3000
 ```
 
 
+## example 06 - Added some debugging capability. 
+
+Added an env var.
+
+The from the command line run:
+
+```
+PORT=4000 npm start
+
+> 01@1.0.0 start
+> node server.js
+
+Server started on port 4000
+```
+
+Then test it:
+
+```
+curl http://localhost:4000
+<head>
+        <title>My Homepage</title>
+
+</head>
+
+<body>
+        <p>My Html page</p>
+</body>%                             
+```
+
+
+
 
 ## example xx - add unit test
 
