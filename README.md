@@ -72,7 +72,72 @@ npm run lint
 npm run lint:fix
 ```
 
-## example 04 - add unit test
+
+## example 04 - create static index.html file
+
+We achieve this using the `express.static()` (middleware) function - https://expressjs.com/en/starter/static-files.html
+
+We create a new folder, called public which will hold our static files. 
+
+We also use the `__dirname` - which is a builtin variable - https://nodejs.org/docs/latest/api/modules.html#__dirname
+
+
+Now open [localhost:3000](http://localhost:3000) to view this index.html file. Or use curl:
+
+```
+curl http://localhost:3000
+<head>
+        <title>My Homepage</title>
+
+</head>
+
+<body>
+        <p>My Html page</p>
+</body>%                          
+```
+
+Since we are using morgan, the cli output now looks like:
+
+```
+npm start
+
+> 01@1.0.0 start
+> node server.js
+
+Server started on port 3000
+::1 - - [14/Mar/2022:13:45:37 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [14/Mar/2022:13:45:38 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [14/Mar/2022:13:54:33 +0000] "GET / HTTP/1.1" 200 80 "-" "curl/7.77.0"
+::1 - - [14/Mar/2022:13:45:39 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+```
+
+Notice above the "morgan" output when a curl command is called too. The "morgan" line has to be put near the top, before any app.use() or app.get(), or it will not print out all the info from various requests. 
+
+as soon as the app.use got triggered it didn't go any further to print `hello from my app`. However that's for the way the express.static() worked. In genaral if 
+an callback calls  needs to run something like `res.send(content)` to signal the completion of a request. 
+
+While the app is running, you can rename the index.html file to something else, then you'll get:
+
+```
+curl http://localhost:3000            
+hello from my app
+```
+
+and if you use the new name, you get:
+
+```
+curl http://localhost:3000/index2.html
+<head>
+        <title>My Homepage</title>
+
+</head>
+
+<body>
+        <p>My Html page</p>
+</body>%            
+```
+
+## example xx - add unit test
 
 <https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo>
 
