@@ -4,7 +4,7 @@ const express = require('express')
 
 const app = express()
 
-// This get basically means if this endpoint is requested, then existing this javascript function:
+// This get basically means if this endpoint is requested, then run this javascript arrow function:
 app.get('/', (req, res) => {
   res.send('hello from my app')
 })
