@@ -137,6 +137,53 @@ curl http://localhost:3000/index2.html
 </body>%            
 ```
 
+## example 05 - Added some debugging capability. 
+
+We introduce the `debug` method. This is a nicer alternative to using `console.log()` to print out debug messages. 
+
+The output looks like:
+
+```
+npm run debug
+
+> 01@1.0.0 debug
+> DEBUG=* npm start
+
+
+> 01@1.0.0 start
+> node server.js
+
+  express:application set "x-powered-by" to true +0ms
+  express:application set "etag" to 'weak' +1ms
+  express:application set "etag fn" to [Function: generateETag] +0ms
+  express:application set "env" to 'development' +1ms
+  express:application set "query parser" to 'extended' +0ms
+  express:application set "query parser fn" to [Function: parseExtendedQueryString] +0ms
+  express:application set "subdomain offset" to 2 +1ms
+  express:application set "trust proxy" to false +0ms
+  express:application set "trust proxy fn" to [Function: trustNone] +0ms
+  express:application booting in development mode +0ms
+  express:application set "view" to [Function: View] +0ms
+  express:application set "views" to '/Users/sherchowdhury/github/npm-express-study-guide/examples/05/views' +0ms
+  express:application set "jsonp callback name" to 'callback' +0ms
+  express:router use '/' query +7ms
+  express:router:layer new '/' +0ms
+  express:router use '/' expressInit +0ms
+  express:router:layer new '/' +0ms
+  express:router use '/' logger +1ms
+  express:router:layer new '/' +0ms
+  express:router use '/' serveStatic +0ms
+  express:router:layer new '/' +0ms
+  express:router:route new '/' +0ms
+  express:router:layer new '/' +0ms
+  express:router:route get '/' +0ms
+  express:router:layer new '/' +0ms
+  myApp should now have started +0ms
+Server started on port 3000
+```
+
+
+
 ## example xx - add unit test
 
 <https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo>
