@@ -75,6 +75,12 @@ npm run lint:fix
 
 ## example 04 - create static index.html file
 
+Note, there's a important distinction between `app.use()` and `app.get()`:
+
+- `app.get()` used to send responses back from a GET request
+- `app.use()` used for running middleware. 
+
+
 We achieve this using the `express.static()` (middleware) function - https://expressjs.com/en/starter/static-files.html
 
 We create a new folder, called public which will hold our static files. 
@@ -211,6 +217,42 @@ curl http://localhost:4000
         <p>My Html page</p>
 </body>%                             
 ```
+
+
+
+
+## example 07 - Added some env vars
+
+Just have to run like this:
+
+```
+PORT=4000 npm start
+
+> 01@1.0.0 start
+> node server.js
+```
+
+
+## Example 08 - replace static html pages with ejs templates
+
+
+Skipped this. 
+
+basically had to create .ejs template files. 
+
+also have to set:
+
+`app.set(...)`
+
+for setting express's internal env vars - https://expressjs.com/en/api.html#app.set
+
+Note this is also used for updating express's own config settings, e.g. the `views` setting. 
+
+
+Also need to replace `res.send('xxxx')`, we use `res.render('index', key-value-object)`
+
+this says which ejs file to use, e.g. in this case it is `index.ejs` and what data to populate it with, i.e. key-value-object. 
+
 
 
 
