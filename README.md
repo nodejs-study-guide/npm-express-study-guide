@@ -143,6 +143,52 @@ curl http://localhost:3000/index2.html
 </body>%            
 ```
 
+
+## Difference between `app.verb()` and `app.use()`
+
+You can fill up your app.js with lots of app.get(), app.post(), app.delete().....etc calls:
+
+https://expressjs.com/en/api.html#app
+
+Fyi, here are all the available verbs - https://expressjs.com/en/api.html#app.use
+
+
+Or you can better break them into smaller functions, using `app.use()`
+
+https://expressjs.com/en/api.html#app
+
+These smaller functions are called "middle ware" functions. E.g. if might have some "authentication" middleware. 
+
+you can simply do:
+
+```
+const auth = require(../path/to/auth)
+
+app.use(auth)
+```
+
+The above app.use() will always run, unless the request comes is responded to higher above the file. 
+
+
+
+Whereas, if we do:
+
+
+```
+const auth = require(../path/to/auth)
+
+app.use('/authentication' auth)
+```
+
+Then it means the auth middleware is called, if the endpoint is `/authentication`
+
+See - https://expressjs.com/en/api.html#app.use (really useful info here)
+
+
+More about when we set up a "router" later on. 
+
+
+
 ## example 05 - Added some debugging capability. 
 
 We introduce the `debug` method. This is a nicer alternative to using `console.log()` to print out debug messages. 
@@ -252,6 +298,13 @@ Note this is also used for updating express's own config settings, e.g. the `vie
 Also need to replace `res.send('xxxx')`, we use `res.render('index', key-value-object)`
 
 this says which ejs file to use, e.g. in this case it is `index.ejs` and what data to populate it with, i.e. key-value-object. 
+
+
+
+
+## Example 09 - setup a router
+
+
 
 
 
