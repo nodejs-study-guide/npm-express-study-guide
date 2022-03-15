@@ -126,9 +126,12 @@ Server started on port 3000
 ::1 - - [14/Mar/2022:13:45:38 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
 ::1 - - [14/Mar/2022:13:54:33 +0000] "GET / HTTP/1.1" 200 80 "-" "curl/7.77.0"
 ::1 - - [14/Mar/2022:13:45:39 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36"
+::1 - - [15/Mar/2022:10:42:02 +0000] "GET /api/name/23 HTTP/1.1" 200 32 "-" "PostmanRuntime/7.29.0"
 ```
 
 Notice above the "morgan" output when a curl command is called too. The "morgan" line has to be put near the top, before any app.use() or app.get(), or it will not print out all the info from various requests. 
+
+I did another example run using postman. 
 
 as soon as the app.use got triggered it didn't go any further to print `hello from my app`. However that's for the way the express.static() worked. In genaral if 
 an callback calls  needs to run something like `res.send(content)` to signal the completion of a request. 
