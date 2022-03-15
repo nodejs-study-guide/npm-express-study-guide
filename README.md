@@ -362,7 +362,13 @@ curl http://localhost:3000/api/name/23
 my name is John and my id is: 23
 ```
 
+You can also go further and do something like:
 
+```javascript
+router.get('/:name/:userID', (req, res) => {
+  res.send('My name is ' + req.params.name + ' and my id is: ' + req.params.userID)
+})
+```
 
 
 
