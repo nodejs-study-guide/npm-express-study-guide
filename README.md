@@ -315,7 +315,36 @@ this says which ejs file to use, e.g. in this case it is `index.ejs` and what da
 
 ## Example 09 - setup a router
 
+router are used to better organised the routing of traffic so that correct callback is executed based on an endpoint 
 
+https://expressjs.com/en/4x/api.html#router
+
+
+You can also try this extract:
+
+You can also replace:
+
+```javascript
+router.get('/name/', (req, res) => {
+  res.send('my name is John')
+})
+```
+
+with the followng, to see how to chain multiple middleware by using the `next()` callback. 
+
+```javascript
+const username = "john"
+let message
+router.get('/name/', (req, res, next) => {
+  message = 'my name is ' + username
+  next()
+})
+
+
+router.get('/name/', (req, res) => {
+  res.send(message)
+})
+```
 
 
 
