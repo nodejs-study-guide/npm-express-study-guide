@@ -347,8 +347,9 @@ router.get('/name/', (req, res) => {
 ```
 
 
+## Example 10 - refactor router
 
-
+It's common practice to seperate out the router out of the app.js file.
 
 ## example xx - add unit test
 
