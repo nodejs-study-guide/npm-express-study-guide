@@ -1,5 +1,16 @@
 # npm-express-study-guide
 
+
+
+[Working with REST API's in JavaScript Pluralsight Course](https://app.pluralsight.com/paths/skills/working-with-rest-apis-in-javascript)
+
+https://app.pluralsight.com/library/courses/node-js-express-rest-web-services-update/table-of-contents
+
+https://app.pluralsight.com/library/courses/javascript-rest-apis-getting-started/table-of-contents
+
+
+[JSON Web Tokens (jwt)](https://app.pluralsight.com/library/courses/securing-javascript-rest-api-json-web-tokens/table-of-contents)
+
 nodejs express webserver notes
 
 ## example 01
