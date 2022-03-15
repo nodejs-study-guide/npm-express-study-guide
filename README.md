@@ -351,6 +351,22 @@ router.get('/name/', (req, res) => {
 
 It's common practice to seperate out the router out of the app.js file.
 
+
+## Example 11 - extract values from endpoint
+
+you can extract parts of the endpoint using the colon character, and use it as variable. e.g.:
+
+
+```
+curl http://localhost:3000/api/name/23
+my name is John and my id is: 23
+```
+
+
+
+
+
+
 ## example xx - add unit test
 
 <https://github.com/Sher-Chowdhury/npm-supertest-and-nock-demo>
