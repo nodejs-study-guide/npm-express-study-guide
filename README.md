@@ -8,6 +8,8 @@ https://app.pluralsight.com/library/courses/node-js-express-rest-web-services-up
 
 https://app.pluralsight.com/library/courses/javascript-rest-apis-getting-started/table-of-contents
 
+https://app.pluralsight.com/library/courses/jwt-fundamentals/table-of-contents
+
 
 [JSON Web Tokens (jwt)](https://app.pluralsight.com/library/courses/securing-javascript-rest-api-json-web-tokens/table-of-contents)
 
